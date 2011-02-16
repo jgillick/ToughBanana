@@ -1,0 +1,97 @@
+/*
+Theme Name: Rolling Hills
+Theme URI: http://toughbanana.com/
+Description: A simple rolling hill and cloud theme
+Author: Jeremy Gillick
+Version: 1.0
+*/
+
+/* Global stuff */
+body { margin: 0; padding: 40px 0 0; background: #d9d9d9 url(images/header_bg_small.png) 70% top repeat-x; font: normal 14px Helvetica Neue, Arial, Helvetica; }
+a { color: #00B; text-decoration: none; }
+a:hover { color: #600; }
+
+a img { border: none;}
+
+h1, h2, h3, h1 a, h2 a, h3 a { display: block; margin: 5px 0; color: #344251; text-shadow: 1px 1px 0px #bad3ed; }
+h3 { font-weight: normal; margin: 15px 0 3px; }
+
+/* Clouds */
+#clouds { position: absolute; top: 0; left: 0; width: 100%; _display: none; }
+#clouds, #clouds div { height: 200px; }
+#clouds { background: url(images/cloud1.png) no-repeat 7% 7%; }
+#clouds div { background: url(images/cloud2.png) 60% 10% no-repeat; }
+#clouds div div { background: url(images/cloud7.png) 40% 20% no-repeat; }
+#clouds div div div { background: url(images/cloud4.png) 90% 15% no-repeat; }
+
+  /* IE Sucks */
+  #clouds { _background-image: url(images/cloud1_iesucks.gif); }
+  #clouds div { _background-image: url(images/cloud2_iesucks.gif); }
+  #clouds div div { _background-image: url(images/cloud7_iesucks.gif); }
+  #clouds div div div { _background-image: url(images/cloud4_iesucks.gif); }
+  
+  /* Rain clouds */
+  #clouds { _background-image: url(images/cloud1_gray.gif); }
+  #clouds div { _background-image: url(images/cloud2_gray.gif); }
+  #clouds div div { _background-image: url(images/cloud7_gray.gif); }
+  #clouds div div div { _background-image: url(images/cloud4_gray.gif); }
+  
+  /* 8bit clouds */
+  /*#clouds { background-image: url(images/cloud1_8bit.gif); }
+    #clouds div { background-image: url(images/cloud2_8bit.gif); }
+    #clouds div div { background-image: url(images/cloud7_8bit.gif); }
+    #clouds div div div { background-image: url(images/cloud4_8bit.gif); }*/
+
+/* Main layout */
+#header, #main { position: relative; width: 80%; max-width: 750px; min-width: 510px; margin: 0 auto; padding: 15px 20px; background: #fff; border: 3px solid #dedede; _width: 700px; }
+
+/* Header */
+#header { position: relative; height: 132px; opacity: .8; border-bottom: none; border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; box-shadow: 5px 0 7px #888; -khtml-box-shadow: 5px 0 7px #888; -moz-box-shadow: 5px 0 7px #888; filter:alpha(opacity=70); }
+#header h1, body.subpage #header h2 { font-size: 30px; margin: 0; padding: 0; }
+#header h2, body.subpage #header h3 { font-size: 18px; font-weight: normal; }
+#header a:hover { color: #344251; text-decoration: none; }
+
+/* Navigation */
+.nav { position: absolute; top: 127px; left: 10px; overflow: visible; }
+.nav ul { margin: 0; padding: 0; list-style-type: none; }
+.nav li { float: left; margin: 5px; font-size: 12px; }
+.nav li a { display: block; color: #000;  padding: 5px 10px; background: #dedede; border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+.nav li a:hover { background: #bbb; text-decoration: none; }
+
+/* Content */
+#main { position: relative; background: #f7f7f7; border-top: none; border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -khtml-border-radius: 0 0 10px 10px; box-shadow: 5px 5px 7px #888; -khtml-box-shadow: 5px 5px 7px #888; -moz-box-shadow: 5px 5px 7px #888; }
+
+#content { position: relative; color: #000; min-height: 300px; margin-top: -7px; padding: 10px; }
+#content h1 { font-size: 20px; }
+#content h2 { font-size: 16px; }
+
+/* Sidebar */
+#sidebar { position: absolute; top: 10px; right: -170px; width: 150px; z-index: 10; padding: 10px 0; }
+#sidebar ul { padding: 0; margin: 5px 0; list-style-type: none; }
+#sidebar ul li { margin: 5px 0 5px 5px; }
+
+/* Footer */
+#footer { clear: both; padding-top: 45px; margin: 40px auto 20px; text-align: center; font-size: 12px; font-family: verdana; color: #666; background: url(images/cloud7.png) center 0 no-repeat; }
+#footer a:link, #footer a:visited { color: #009; }
+
+#footer .links { overflow: hidden; text-align: center; }
+#footer .links ul { list-style-type: none; margin: 0 auto; padding: 0; }
+#footer .links ul li { display: inline; padding: 0 2px 0 7px; border-left: 1px solid #666; }
+#footer .links ul li:first-child { border: none; }
+
+#footer { _background-image: none; }
+
+/* Post */
+.post .meta { overflow: auto; font-size: 12px; margin: 3px 10px; }
+.post .meta p { clear: both; }
+.post .meta dl { overflow: hidden; margin: 0 10px 0 0; float: left; }
+.post .meta dt { float: left; color: #666; margin: 3px; }
+.post .meta dd { float: left; margin-left: 0; margin: 3px; }
+.post .meta dt:after { content: ":" }
+.post .meta dt.post-tags { clear: left; }
+
+.post .post-summary p { margin: 5px 0; }
+.post .post-summary .read-more { font-size: 12px; font-style: italic; }
+
+.post .comments { margin: 10px; }
+.post .comments h3 { font-weight: normal; margin: 0 0 10px -10px; }
