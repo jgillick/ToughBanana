@@ -75,6 +75,8 @@
 	  </script>
 	  <!-- Google Analytics End -->
 	<?php endif; ?>
+	
+	<?php wp_head(); ?>
 </head>
 
 <body class="<?php echo ((is_home() || is_front_page()) ? "" : "subpage") ?> 
