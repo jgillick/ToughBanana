@@ -1,0 +1,27 @@
+/* Nutritional Facts Box */
+.nutrition { width: 250px; padding: 10px; margin: 10px auto; font-size: 11px; border: 2px solid #333; color: #555; }
+.nutrition h3 { font: bold 18px verdana; }
+.nutrition h4 { padding: 3px 0; font-size: 11px; font-weight: normal; border-bottom: 1px solid #000; }
+.nutrition h3, 
+	.nutrition h4 { margin: 0; color: #555; text-shadow: none; }
+
+.nutrition dl { overflow: hidden; margin: 3px 0; padding-bottom: 3px; border-bottom: 4px solid #000; }
+.nutrition dl dt { float: left; clear: left; margin: 3px 7px 3px 0; }
+.nutrition dl dt:after { content: ":"; }
+.nutrition dl dd { padding: 3px 0; margin: 0; }
+
+.nutrition dl.calories { position: relative; }
+.nutrition dl.calories dt { clear: none; }
+.nutrition dl.calories dd { float: left; }
+
+.nutrition dl.calories dt.cal-fat { float: right; margin-right: 3em; }
+.nutrition dl.calories dd.cal-fat { position: absolute; top: 0; right: 0; width: 2.5em; }
+
+.nutrition dl.all dt { font-weight: bold; }
+.nutrition dl.all dd { border-bottom: 1px solid #dedede; }
+.nutrition dl.all dd.protein { border-bottom: none; }
+.nutrition dl dt.sat-fat,
+ 	.nutrition dl dt.fiber,
+ 	.nutrition dl dt.sugars { font-weight: normal; margin-left: 10px; }
+
+.nutrition p { margin: 5px 0 0; }

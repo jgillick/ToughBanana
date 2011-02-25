@@ -106,4 +106,43 @@ function is_printable(){
   return (isset($_REQUEST['print']));
 }
 
+/*
+* Get the formatted nutritional facts values for the post
+*/
+function get_the_nutrition_facts($postId){
+  $meta = get_post_custom($postId);
+  $facts = array( 'servings' => '?',
+                  'calories' => '?',
+                  'cal-fat' => '?',
+                  'fat' => '?',
+                  'sat-fat' => '?',
+                  'cholesterol' => '?',
+                  'sodium' => '?',
+                  'carbohydrate' => '?',
+                  'fiber' => '?',
+                  'sugars' => '?',
+                  'protein' => '?',
+                  'source' => 'http://www.livestrong.com/profile/jgillick/' );
+
+  // Convert and round all the numbers
+  $found = 0;
+  foreach($facts as $key => $value) {
+
+    if( isset($meta[$key]) && isset($meta[$key][0]) && is_numeric($meta[$key][0]) ){ 
+      $found++;
+      $facts[$key] = intval(round(floatval($meta[$key][0])));
+    } 
+  }
+  
+  // Get source
+  if( isset($meta['livestrong-url']) && !empty($meta['livestrong-url'][0]) ){
+   $facts['source'] = $meta['livestrong-url'][0];
+  }
+  
+  if( $found > 0 ){
+    return $facts;
+  }
+  return false;
+}
+
 ?>

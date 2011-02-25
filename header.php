@@ -51,6 +51,7 @@
   	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/common.css" />
 	<?php endif; ?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/nutrition-facts.css" />
 	
 	<link rel="shortcut icon" href="/favicon.ico" />
 

@@ -1,5 +1,6 @@
 
-body { position: relative; width: 700px; margin: 0 0 10px 10px; padding: 0 0 70px; font: normal 13px Helvetica Neue, Arial, Helvetica; color: #000; }
+body { position: relative; margin: 0 0 10px 10px; font: normal 13px Helvetica Neue, Arial, Helvetica; color: #000; }
+
 
 a, a:visited { color: #000; text-decoration: none; }
 a:hover { text-decoration: underline; color: #00b; }
@@ -7,6 +8,7 @@ a:hover { text-decoration: underline; color: #00b; }
 ul { padding-left: 20px; overflow: hidden; }
 ul li { float: left; width: 310px; margin-right: 10px; }
 
+#main { position: relative; width: 700px; padding: 0 0 70px; }
 #sidebar { display: none; }
 
 /* Header becomes the footer */
@@ -21,9 +23,10 @@ ul li { float: left; width: 310px; margin-right: 10px; }
 #header .blog-desc { display: inline; }
 
 /* Footer site link */
+#footer { width: 700px; }
 #footer * { display: none; height: 1px; overflow: visible; }
 #footer .site-link, #footer .site-link a { display: block; }
-#footer .site-link { position: absolute; left: 0; bottom: 0; width: 100%; text-align: center; }
+#footer .site-link { position: absolute; left: 0; bottom: 0; width: 700px; text-align: center; }
 
 /* Post */
 .post .comments,
@@ -40,3 +43,7 @@ ul li { float: left; width: 310px; margin-right: 10px; }
                           
 .post.has-thumb .thumbnail { float: left; margin: 10px 7px 7px 0; }
 .post.has-thumb .thumbnail img { display: block; border: 1px solid #666; }
+
+/* Nutrition information */
+.nutrition { position: absolute; top: 60px; right: -290px; margin: 0; }
+.nutrition .source a { font-style: italic; }
