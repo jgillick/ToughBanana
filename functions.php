@@ -76,7 +76,7 @@ function is_recipe_post($postId){
   // Go through the tags and look for the recipe tag
   if ($tags) {
     foreach($tags as $tag) {
-      if( $tag->term_id == '12' ){ // 'recipe' ID
+      if( $tag->name == 'recipe' ){ 
         return true;
       } 
     }
