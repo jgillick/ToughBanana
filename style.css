@@ -1,5 +1,5 @@
 /*
-Theme Name: Rolling Hills
+Theme Name: Tough Banana
 Theme URI: http://toughbanana.com/
 Description: A simple rolling hill and cloud theme
 Author: Jeremy Gillick
@@ -81,6 +81,8 @@ hr { margin: 20px auto; height: 30px; border: none; background: url(images/banan
 #footer .links ul li { display: inline; padding: 0 2px 0 7px; border-left: 1px solid #666; }
 #footer .links ul li:first-child { border: none; }
 
+#footer .site-link { display: none; }
+
 #footer { _background-image: none; }
 
 /* Meta data */
@@ -99,14 +101,16 @@ hr { margin: 20px auto; height: 30px; border: none; background: url(images/banan
 .single-post .post .meta { position: absolute; top: 0; right: 0; width: 180px; min-height: 150px; margin: 0; padding: 10px 0 20px 15px; border-left: 1px solid #999; }
 .single-post .post .meta dl { margin: 5px 0; }
 .single-post .post .meta dt { clear: left; }
+.single-post .post .meta .print-link a { display: block; line-height: 16px; padding-left: 18px; background: url(images/printer.gif) no-repeat; }
 .single-post .post .meta .fb-share { clear: both; }
 .single-post .post .meta .author-image { display: inline-block; padding: 2px; margin: 3px 0; border: 1px solid #bbb; text-align: center; -khtml-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .single-post .post .meta .author-image img { display: block; }
 
 .single-post .thumbnail { position: absolute; top: 0; left: -12345em; }
 
-.post h3 { margin: 20px 0 0 5px; padding: 5px 10px; display: inline-block; border: 1px solid #988; border-radius: 10px 10px 0 0; border-bottom-width: 0; background: #F7F7F7; position: relative; z-index: 10; }
-.post h3 + * { margin-top: -1px; padding-top: 7px; z-index: 5; border-top: 1px solid #999; }
+.post h3 { margin: 20px 0 7px; }
+/*.post h3 { margin: 20px 0 0 5px; padding: 5px 10px; display: inline-block; border: 1px solid #344251; border-radius: 10px 10px 0 0; border-bottom-width: 0; background: #F7F7F7; position: relative; z-index: 10; }
+.post h3 + * { margin-top: -1px; padding-top: 7px; z-index: 5; border-top: 1px solid #344251; }*/
 
 
 .post .comments { margin: 20px 10px 10px; text-align: center; }

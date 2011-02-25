@@ -19,6 +19,9 @@
 	<p>
 		Site and content created by <a href="http://blog.mozmonkey.com/">Jeremy Gillick</a>.
 	</p>
+	<p class="site-link">
+	  <a href="http://toughbanana.com">ToughBanana.com</a>
+	</p>
 </div>
 
 </body>

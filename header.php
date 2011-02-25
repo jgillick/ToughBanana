@@ -44,9 +44,14 @@
     <?php else :?>
 	    <meta property="og:image" content="<?php echo banana_url("images", "logo.png"); ?>"/>
     <?php endif; ?>
-  	
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/common.css" />
+	
+	<?php if(is_printable() && is_single() && is_recipe_post($wp_query->post->ID)): ?>
+	  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/print-recipe.css" /> 
+	<?php else: ?>  
+  	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/common.css" />
+	<?php endif; ?>
+	
 	<link rel="shortcut icon" href="/favicon.ico" />
 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ) ?> RSS Feed" href="<?php bloginfo('rss2_url') ?>" /> 
@@ -114,10 +119,11 @@
 
 		<div class="nav">
 			<ul>
-			  <li><a href="/">Home</a></li>
+			  <li><a href="<?php echo home_url( '/' ); ?>">Home</a></li>
 			  <li><a href="/about">About</a></li>
 			</ul>
 		</div>
 	</div>
 	<div id="main">
 	  <div id="content">
+	    

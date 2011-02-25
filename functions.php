@@ -1,5 +1,9 @@
 <?php
 
+/**
+* CUSTOMIZE WORDPRESS
+*/
+
 /*
 * Thumbnail support 
 */
@@ -35,6 +39,13 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+?>
+
+<?php
+
+/**
+* THEME FUNCTIONS
+*/
 
 /*
 * Return directory paths. By default it returns the template directorys
@@ -54,6 +65,47 @@ function banana_url($name, $append = ""){
 	$url .= "/". $append;
 	
 	return $url;
+}
+
+/*
+* Is the post a recipe
+*/
+function is_recipe_post($postId){
+  $tags = get_the_tags($wp_query->post->ID);
+  
+  // Go through the tags and look for the recipe tag
+  if ($tags) {
+    foreach($tags as $tag) {
+      if( $tag->term_id == '12' ){ // 'recipe' ID
+        return true;
+      } 
+    }
+  }
+  
+  return false;
+}
+
+/*
+* Add ?print to the post URL
+*/
+function the_printable_url($postId){
+  $url = get_permalink($postId);
+  
+  if( strrpos($url, "?") != FALSE ){
+    $url .= "&print";
+  }
+  else{
+    $url .= "?print";
+  }
+  
+  return $url;
+}
+
+/*
+* Are we viewing the printable version of a page
+*/
+function is_printable(){
+  return (isset($_REQUEST['print']));
 }
 
 ?>
