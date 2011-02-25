@@ -19,77 +19,48 @@
  */
 ?>
 
+<ol class="posts">
+
 <?php while ( have_posts() ) : the_post(); ?>
 	
-	<div class="post <?php echo (is_single()) ? "single-post" : "" ?>" id="post-<?php the_ID(); ?>">
-	
-		<?php if ( is_front_page() ): ?>
-			<h2 class="entry-title">
-			  <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-			    <?php the_title(); ?></a></h2>
-		<?php else: ?>
-			<h1 class="entry-title">
-			  <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-	        <?php the_title(); ?></a></h1>
-		<?php endif; ?>
+	<li class="post" id="post-<?php the_ID(); ?>">
 		
-		<?php if ( is_single() ): ?>
-
+		<div class="thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php if(has_post_thumbnail()): ?>
+					<?php the_post_thumbnail(); ?>
+				<?php else: ?>
+					<img src="<?php echo banana_url('images', 'default_banana_thumb.png'); ?>" width="75" height="75" />
+				<?php endif; ?>
+			</a>
+		</div>
+		
+		<h2 class="entry-title">
+		  <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+		    <?php the_title(); ?></a></h2>
+							
+		<?php
+			$tags_list = get_the_tag_list( '', ', ' );
+			if ( $tags_list ):
+		?>
 			<div class="meta">
 				<dl>
-					<dt class="post-date">Posted on</dt>
-					<dd class="post-date"><?php the_date("M n, Y"); ?> </dd>
-					
-					<dt class="post-author">By</dt>
-					<dd class="post-author"><?php the_author(); ?></dd>
-					
-					<?php
-						$tags_list = get_the_tag_list( '', ', ' );
-						if ( $tags_list ):
-					?>
-						<dt class="post-tags">Tagged with</dt>
-						<dd class="post-tags">
-							<?php echo $tags_list ?>
-						</dd>
-					<?php endif; ?>
+					<dt class="post-tags">Tagged with</dt>
+					<dd class="post-tags">
+						<?php echo $tags_list ?>
+					</dd>
 				</dl>
-				
-				<?php if ( is_single() ): ?>
-					<fb:share-button href="<?php the_permalink(); ?>" type="button_count"></fb:share-button>
-				<?php endif; ?>
-			</div>
-			
-		
-			<div class="post-body">
-				<?php the_content(); ?>
-			</div>		
-			<div class="comments">
-				<?php comments_template( '', true ); ?>
-			</div>
-		<?php else: ?>
-					
-			<?php
-				$tags_list = get_the_tag_list( '', ', ' );
-				if ( $tags_list ):
-			?>
-				<div class="meta">
-					<dl>
-						<dt class="post-tags">Tagged with</dt>
-						<dd class="post-tags">
-							<?php echo $tags_list ?>
-						</dd>
-					</dl>
-				</div>
-			<?php endif; ?>
-			
-			<div class="post-summary">
-				<?php the_excerpt(); ?>
 			</div>
 		<?php endif; ?>
+		
+		<div class="post-summary">
+			<?php the_excerpt(); ?>
+		</div>
 
-	</div>
+	</li>
 
 <?php endwhile;  ?>
+</ol>
 
 <?php /* Paginatione */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>

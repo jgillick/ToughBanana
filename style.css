@@ -7,14 +7,16 @@ Version: 1.0
 */
 
 /* Global stuff */
-body { margin: 0; padding: 40px 0 0; background: #d9d9d9 url(images/header_bg_small.png) 70% top repeat-x; font: normal 14px Helvetica Neue, Arial, Helvetica; }
+body { margin: 0; padding: 40px 0 0; background: #d9d9d9 url(images/header_bg_small.png) 70% top repeat-x; font: normal 13px Helvetica Neue, Arial, Helvetica; }
 a { color: #00B; text-decoration: none; }
 a:hover { color: #600; }
 
 a img { border: none;}
 
 h1, h2, h3, h1 a, h2 a, h3 a { display: block; margin: 5px 0; color: #344251; text-shadow: 1px 1px 0px #bad3ed; }
-h3 { font-weight: normal; margin: 15px 0 3px; }
+h3 { font-size: 16px; font-weight: normal; margin: 15px 0 3px; }
+
+hr { margin: 20px auto; height: 30px; border: none; background: url(images/banana_hr.png) no-repeat center; }
 
 /* Clouds */
 #clouds { position: absolute; top: 0; left: 0; width: 100%; _display: none; }
@@ -43,12 +45,12 @@ h3 { font-weight: normal; margin: 15px 0 3px; }
     #clouds div div div { background-image: url(images/cloud4_8bit.gif); }*/
 
 /* Main layout */
-#header, #main { position: relative; width: 80%; max-width: 750px; min-width: 510px; margin: 0 auto; padding: 15px 20px; background: #fff; border: 3px solid #dedede; _width: 700px; }
+#header, #main { position: relative; width: 80%; max-width: 850px; min-width: 510px; margin: 0 auto; padding: 15px 20px; background: #fff; border: 3px solid #dedede; _width: 700px; }
 
 /* Header */
-#header { position: relative; height: 132px; opacity: .8; border-bottom: none; border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; box-shadow: 5px 0 7px #888; -khtml-box-shadow: 5px 0 7px #888; -moz-box-shadow: 5px 0 7px #888; filter:alpha(opacity=70); }
-#header h1, body.subpage #header h2 { font-size: 30px; margin: 0; padding: 0; }
-#header h2, body.subpage #header h3 { font-size: 18px; font-weight: normal; }
+#header { position: relative; height: 132px; opacity: .8; border-bottom: none; border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; box-shadow: 5px 0 7px #888; -khtml-box-shadow: 5px 0 7px #888; -moz-box-shadow: 5px 0 7px #888; filter:alpha(opacity=70); background-image: url(images/logo.png); background-repeat: no-repeat; background-position: 10px 10px; }
+#header .blog-title { font-size: 30px; margin: 0; padding: 0; font-weight: bold; padding-left: 70px; }
+#header .blog-desc { font-size: 18px; margin: 5px 0; font-weight: normal; padding-left: 70px; }
 #header a:hover { color: #344251; text-decoration: none; }
 
 /* Navigation */
@@ -61,12 +63,12 @@ h3 { font-weight: normal; margin: 15px 0 3px; }
 /* Content */
 #main { position: relative; background: #f7f7f7; border-top: none; border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -khtml-border-radius: 0 0 10px 10px; box-shadow: 5px 5px 7px #888; -khtml-box-shadow: 5px 5px 7px #888; -moz-box-shadow: 5px 5px 7px #888; }
 
-#content { position: relative; color: #000; min-height: 300px; margin-top: -7px; padding: 10px; }
+#content { position: relative; color: #000; min-height: 300px; margin-top: -7px; }
 #content h1 { font-size: 20px; }
 #content h2 { font-size: 16px; }
 
 /* Sidebar */
-#sidebar { position: absolute; top: 10px; right: -170px; width: 150px; z-index: 10; padding: 10px 0; }
+#sidebar { font-size: 13px; position: absolute; top: 10px; right: -170px; width: 150px; z-index: 10; padding: 10px 0; }
 #sidebar ul { padding: 0; margin: 5px 0; list-style-type: none; }
 #sidebar ul li { margin: 5px 0 5px 5px; }
 
@@ -81,17 +83,51 @@ h3 { font-weight: normal; margin: 15px 0 3px; }
 
 #footer { _background-image: none; }
 
-/* Post */
-.post .meta { overflow: auto; font-size: 12px; margin: 3px 10px; }
-.post .meta p { clear: both; }
-.post .meta dl { overflow: hidden; margin: 0 10px 0 0; float: left; }
-.post .meta dt { float: left; color: #666; margin: 3px; }
-.post .meta dd { float: left; margin-left: 0; margin: 3px; }
-.post .meta dt:after { content: ":" }
+/* Meta data */
+.meta { overflow: auto; font-size: 12px; margin: 3px 10px; }
+.meta p { clear: both; }
+.meta dl { overflow: hidden; margin: 0; float: left; }
+.meta dt { float: left; color: #666; margin: 3px; }
+.meta dd { float: left; margin-left: 0; margin: 3px; }
+.meta dt:after { content: ":" }
+
 .post .meta dt.post-tags { clear: left; }
+
+/* Single post */
+.single-post .post { position: relative;  padding-right: 210px; }
+.single-post .post h1 { margin-right: 180px; }
+.single-post .post .meta { position: absolute; top: 0; right: 0; width: 180px; min-height: 150px; margin: 0; padding: 10px 0 20px 15px; border-left: 1px solid #999; }
+.single-post .post .meta dl { margin: 5px 0; }
+.single-post .post .meta dt { clear: left; }
+.single-post .post .meta .fb-share { clear: both; }
+.single-post .post .meta .author-image { display: inline-block; padding: 2px; margin: 3px 0; border: 1px solid #bbb; text-align: center; -khtml-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.single-post .post .meta .author-image img { display: block; }
+
+.single-post .thumbnail { position: absolute; top: 0; left: -12345em; }
+
+.post h3 { margin: 20px 0 0 5px; padding: 5px 10px; display: inline-block; border: 1px solid #988; border-radius: 10px 10px 0 0; border-bottom-width: 0; background: #F7F7F7; position: relative; z-index: 10; }
+.post h3 + * { margin-top: -1px; padding-top: 7px; z-index: 5; border-top: 1px solid #999; }
+
+
+.post .comments { margin: 20px 10px 10px; text-align: center; }
+.post .comments h3 { font-weight: normal; margin: 0 0 10px -10px; text-align: left; }
+
+/* Post list */
+ol.posts { margin: 0; padding: 0; list-style-type: none; }
+ol.posts li { margin: 30px 0; padding-left: 120px; position: relative; min-height: 100px; _height: 100px; _overflow: visible; }
+ol.posts li .thumbnail { position: absolute; left: 0; top: 5px; width: 100px; height: 100px; overflow: visible; text-align: center; }
+ol.posts li .thumbnail img { border-radius: 15px; overflow: hidden; box-shadow: 5px 0 7px #888; -khtml-box-shadow: 3px 3px 10px #888; -moz-box-shadow: 5px 0 7px #888; }
 
 .post .post-summary p { margin: 5px 0; }
 .post .post-summary .read-more { font-size: 12px; font-style: italic; }
 
-.post .comments { margin: 10px; }
-.post .comments h3 { font-weight: normal; margin: 0 0 10px -10px; }
+
+/* Attachment page */
+.attachment-page h1 { text-align: center; margin-top: 10px; }
+.attachment-page .attachment { margin: 10px 0 5px; text-align: center; }
+.attachment-page .attachment a.view-full { display: block; margin: 5px 0 0; font-size: 12px; text-align: center; }
+.attachment-page .meta { text-align: center; }
+.attachment-page .meta dl, 
+.attachment-page .meta dt, 
+.attachment-page .meta dd { display: inline; float: none; }
+.attachment-page .comments { margin: 30px 0 0; }
