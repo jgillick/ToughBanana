@@ -60,6 +60,7 @@
 
 		<div class="comments">
 			<hr />
+			<?php if (function_exists('facebook_comments')) facebook_comments(); ?>
 			<?php comments_template( '', true ); ?>
 		</div>
 
