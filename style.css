@@ -107,7 +107,8 @@ hr { margin: 20px auto; height: 30px; border: none; background: url(images/banan
 .single-post .post .meta .author-image { display: inline-block; padding: 2px; margin: 3px 0; border: 1px solid #bbb; text-align: center; -khtml-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .single-post .post .meta .author-image img { display: block; }
 
-.single-post .thumbnail { position: absolute; top: 0; left: -12345em; }
+.single-post .thumbnail,
+.single-post .fb-share-thumbnail { position: absolute; top: 0; left: -12345em; }
 
 .post h3 { margin: 20px 0 7px; }
 /*.post h3 { margin: 20px 0 0 5px; padding: 5px 10px; display: inline-block; border: 1px solid #344251; border-radius: 10px 10px 0 0; border-bottom-width: 0; background: #F7F7F7; position: relative; z-index: 10; }

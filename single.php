@@ -2,6 +2,11 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<div class="post <?php if(has_post_thumbnail()): ?>has-thumb<?php endif; ?>" id="post-<?php the_ID(); ?>">		
+	  
+    <?php if(has_post_thumbnail()): ?>
+  	  <div class="fb-share-thumbnail"><?php the_post_thumbnail(); ?></div>
+  	<?php endif; ?>
+    	
 		<h1 class="entry-title">
 		  <?php the_title(); ?></h1>
 

@@ -40,9 +40,10 @@ ul li { float: left; width: 310px; margin-right: 10px; }
 
 .post .post-body h3 { margin: 1em 0 .5em; padding-top: .3em; border-top: 1px dotted #ccc; clear: both; }
 .post .post-body p { margin: 1em 0; }
-                          
-.post.has-thumb .thumbnail { float: left; margin: 10px 7px 7px 0; }
-.post.has-thumb .thumbnail img { display: block; border: 1px solid #666; }
+
+.post.has-thumb .post-body .thumbnail { float: left; margin: 10px 7px 7px 0; }
+.post.has-thumb .post-body .thumbnail img { display: block; border: 1px solid #666; }
+.post .fb-share-thumbnail { display: none; }
 
 /* Nutrition information */
 .nutrition { position: absolute; top: 60px; right: -290px; margin: 0; }
