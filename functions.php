@@ -19,16 +19,6 @@ function new_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
-function rss_post_thumbnail($content) {
-	global $post;
-	if(has_post_thumbnail($post->ID)) {
-		$content = get_the_excerpt() . '<p>' . get_the_post_thumbnail($post->ID) .'</p>';
-	}
-	return $content;
-}
-add_filter('the_excerpt_rss', 'rss_post_thumbnail');
-add_filter('the_content_feed', 'rss_post_thumbnail');
-
 
 /*
 * Change elipsis for post excerpt
@@ -39,6 +29,18 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+/*
+* Add thumbnail to RSS item
+*/
+function rss_post_thumbnail($content) {
+	global $post;
+	if(has_post_thumbnail($post->ID)) {
+		$content = get_the_excerpt() . '<p>' . get_the_post_thumbnail($post->ID) .'</p>';
+	}
+	return $content;
+}
+add_filter('the_excerpt_rss', 'rss_post_thumbnail');
+add_filter('the_content_feed', 'rss_post_thumbnail');
 
 
 /**
@@ -143,6 +145,38 @@ function get_the_nutrition_facts($postId){
     return $facts;
   }
   return false;
+}
+
+/*
+* The post excerpt or blog description without any HTML tags
+*/
+function get_page_description(){
+  global $post;
+  
+  $excerpt = get_bloginfo('description');
+  
+  // Get post excerpt
+  if ( is_single() ){
+
+    if(!empty($post->post_excerpt) ) {
+      $excerpt = strip_tags($post->post_excerpt);
+      
+    } elseif (!empty($post->post_content)){
+      $len = new_excerpt_length(55);
+      $excerpt = strip_tags($post->post_content); // remove tags
+      $excerpt = preg_replace("/\s+/", " ", $excerpt); // collapse multiple spaces
+      $words = explode(" ", $excerpt);
+        
+      // Trim
+      if( count($words) > $len ){
+        $words = array_slice($words, 0, $len);
+        $excerpt = implode(" ", $words) ."...";
+      }
+    }
+     
+  }
+  
+  return $excerpt;
 }
 
 ?>

@@ -29,22 +29,25 @@
 	</title>
   	
   	
-	<!-- Open graph protocol -->
+	<!-- OPEN GRAPH PROTOCOL START -->
 	<meta property="og:title" content="<?php echo $title ?>"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:url" content="<?php echo get_bloginfo('url') . $_SERVER["REQUEST_URI"] . $_SERVER["QUERY_STRING'"] ?> "/>
-    <meta property="og:site_name" content="<?php bloginfo( 'name' ) ?>"/>
-    <meta property="fb:app_id" content="194386833923561"/>
-    <meta property="fb:admins" content="194386833923561, 763639132"/>
-    <meta property="og:description" content="<?php bloginfo( 'description', 'display'); ?>"/>
-    
-    <?php if(is_single() && has_post_thumbnail($wp_query->post->ID)): ?>
-    	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );  ?>
-        <meta property="og:image" content="<?php echo $thumb[0]; ?>"/>
-    <?php else :?>
-	    <meta property="og:image" content="<?php echo banana_url("images", "logo.png"); ?>"/>
-    <?php endif; ?>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="<?php echo get_bloginfo('url') . $_SERVER["REQUEST_URI"] . $_SERVER["QUERY_STRING'"] ?> "/>
+  <meta property="og:site_name" content="<?php bloginfo( 'name' ) ?>"/>
+  <meta property="fb:app_id" content="194386833923561"/>
+  <meta property="fb:admins" content="194386833923561, 763639132"/>
+  <meta property="og:description" content="<?php echo get_page_description($wp_query->post->ID) ?>"/>
+  
+  <?php if(is_single() && has_post_thumbnail($wp_query->post->ID)): ?>
+  	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );  ?>
+      <meta property="og:image" content="<?php echo $thumb[0]; ?>"/>
+      <link rel="image_src" type="image/jpeg" href="<?php echo $thumb[0]; ?>" />
+  <?php else :?>
+    <meta property="og:image" content="<?php echo banana_url("images", "logo.png"); ?>"/>
+  <?php endif; ?>
+	<!-- OPEN GRAPH PROTOCOL END -->
 	
+  <!-- STYLESHEETS START -->
 	<?php if(is_printable() && is_single() && is_recipe_post($wp_query->post->ID)): ?>
 	  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/print-recipe.css" /> 
 	<?php else: ?>  
@@ -52,9 +55,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/common.css" />
 	<?php endif; ?>
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/nutrition-facts.css" />
-	
+  <!-- STYLESHEETS END -->
+  
 	<link rel="shortcut icon" href="/favicon.ico" />
-
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ) ?> RSS Feed" href="<?php bloginfo('rss2_url') ?>" /> 
 	
 	<?php /* DON'T TRACK LOGGED IN USERS */ ?>
