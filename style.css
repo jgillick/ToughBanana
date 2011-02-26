@@ -106,6 +106,7 @@ hr { margin: 20px auto; height: 30px; border: none; background: url(images/banan
 .single-post .post .meta .fb-share { clear: both; }
 .single-post .post .meta .author-image { display: inline-block; padding: 2px; margin: 3px 0; border: 1px solid #bbb; text-align: center; -khtml-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .single-post .post .meta .author-image img { display: block; }
+.single-post .post .meta dd.post-tags { width: 135px; }
 
 .single-post .thumbnail,
 .single-post .fb-share-thumbnail { position: absolute; top: 0; left: -12345em; }
