@@ -13,7 +13,7 @@ ul li { float: left; width: 310px; margin-right: 10px; }
 .polaroid-gallery { display: none; }
 
 /* Header becomes the footer */
-#header { position: absolute; bottom: 20px; left: 0; height: 50px; line-height: 50px; width: 698px; text-align: center; background: #999; border: 1px solid #666; border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -khtml-border-radius: 0 0 10px 10px; }
+#header { position: absolute; bottom: 20px; left: 0; height: 50px; line-height: 50px; width: 698px; text-align: center; background: #dfc99d; border: 1px solid #916418; border-top: none; border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -khtml-border-radius: 0 0 10px 10px; z-index: 10; }
 #header, 
 	#header a, 
 	#header a:visited { color: #333; text-decoration: none;  }
@@ -36,10 +36,10 @@ ul li { float: left; width: 310px; margin-right: 10px; }
 	.post img,
 	.post .wp-caption { display: none; }
 
-.post .entry-title { margin: 10px 70px 0 10px; padding: 7px 10px; display: inline-block; border: 1px solid #333; border-bottom-width: 0; background: #ddd; position: relative; z-index: 10; font-size: 16px; font-weight: normal; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; }
-.post .post-body { margin-top: -1px; padding: 7px 10px 7px 20px; z-index: 5; border: solid #333; border-width: 1px 1px 0 1px; border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; }
+.post .entry-title { margin: 10px 70px 0 10px; padding: 7px 10px; display: inline-block; border: 1px solid #916418; border-bottom-width: 0; background: #e9d5ae; position: relative; z-index: 10; font-size: 16px; font-weight: normal; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; }
+.post .post-body { margin-top: -2px; padding: 7px 10px 15px 20px; z-index: 5; background: #faf1e1; border: solid #916418; border-width: 1px 1px 0 1px; border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -khtml-border-radius: 10px 10px 0 0; }
 
-.post .post-body h3 { margin: 1em 0 .5em; padding-top: .3em; border-top: 1px dotted #ccc; clear: both; }
+.post .post-body h3 { margin: 1em 0 .5em; padding-top: .3em; border-top: 1px dotted #916418; clear: both; }
 .post .post-body p { margin: 1em 0; }
 
 .post.has-thumb .post-body .thumbnail { float: left; margin: 10px 7px 7px 0; }
