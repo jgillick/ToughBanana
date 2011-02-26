@@ -10,6 +10,7 @@ ul li { float: left; width: 310px; margin-right: 10px; }
 
 #main { position: relative; width: 700px; padding: 0 0 70px; }
 #sidebar { display: none; }
+.polaroid-gallery { display: none; }
 
 /* Header becomes the footer */
 #header { position: absolute; bottom: 20px; left: 0; height: 50px; line-height: 50px; width: 698px; text-align: center; background: #999; border: 1px solid #666; border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -khtml-border-radius: 0 0 10px 10px; }
