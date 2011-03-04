@@ -1,0 +1,1 @@
+ssh toughbanana.com "cd public_html/wp-content/themes/ToughBanana/; git pull"

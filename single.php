@@ -54,11 +54,9 @@
 	
 			<?php the_content(); ?>
 		</div>		
-		
-		<?php include('nutrition-facts.php'); ?>
 
 
-		<div class="comments">
+		<div class="comments" id="comments">
 			<hr />
 			<?php comments_template( '', true ); ?>
 		</div>

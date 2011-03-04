@@ -1,8 +1,12 @@
-<?php $nutrFact = get_the_nutrition_facts(get_the_ID()); ?>
-<?php if($nutrFact): ?>
+<?php 
+  if(!isset($nutrFact)){
+    $nutrFact = get_the_nutrition_facts(get_the_ID());
+  }  
+?>
+<?php if($nutrFact !== false): ?>
   <div class="nutrition">
   
-    <h3>Nutrition Facts</h3>
+    <h3 id="nutrition">Nutrition Facts</h3>
     <dl class="servings">
       <dt>Servings</dt>
       <dd><?php echo $nutrFact['servings']; ?></dd>

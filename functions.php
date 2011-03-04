@@ -1,46 +1,7 @@
 <?php
+require("functions/wordpress.php");
+require("functions/shortcodes.php");
 
-/**
-* CUSTOMIZE WORDPRESS
-*/
-
-/*
-* Thumbnail support 
-*/
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 100, 100, true ); 
-
-
-/*
-* Make excerpt 150 characters long
-*/
-function new_excerpt_length($length) {
-	return 75;
-}
-add_filter('excerpt_length', 'new_excerpt_length');
-
-
-/*
-* Change elipsis for post excerpt
-*/
-function new_excerpt_more($more) {
-	global $post;
-	return '&hellip; <a href="'. get_permalink($post->ID) . '" class="read-more">Continue reading&rarr;</a>';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
-/*
-* Add thumbnail to RSS item
-*/
-function rss_post_thumbnail($content) {
-	global $post;
-	if(has_post_thumbnail($post->ID)) {
-		$content = get_the_excerpt() . '<p>' . get_the_post_thumbnail($post->ID) .'</p>';
-	}
-	return $content;
-}
-add_filter('the_excerpt_rss', 'rss_post_thumbnail');
-add_filter('the_content_feed', 'rss_post_thumbnail');
 
 
 /**
@@ -65,6 +26,13 @@ function banana_url($name, $append = ""){
 	$url .= "/". $append;
 	
 	return $url;
+}
+
+/**
+* Return the template file path
+*/
+function template_path( $scriptName = "" ){
+  return dirname(__FILE__) ."/". $scriptName;
 }
 
 /*
@@ -109,11 +77,10 @@ function is_printable(){
 }
 
 /*
-* Get the formatted nutritional facts values for the post
+* Returns the default array of nutrition facts
 */
-function get_the_nutrition_facts($postId){
-  $meta = get_post_custom($postId);
-  $facts = array( 'servings' => '?',
+function get_the_nutrition_facts_array(){ 
+  return array( 'servings' => '?',
                   'calories' => '?',
                   'cal-fat' => '?',
                   'fat' => '?',
@@ -125,6 +92,20 @@ function get_the_nutrition_facts($postId){
                   'sugars' => '?',
                   'protein' => '?',
                   'source' => 'http://www.livestrong.com/profile/jgillick/' );
+}
+
+/*
+* Get the formatted nutritional facts values for the post
+*/
+function get_the_nutrition_facts($postId = -1){
+  global $post;
+  
+  if( $postId < 0 ){
+    $postId = $post->ID;
+  }
+  
+  $meta = get_post_custom($postId);
+  $facts = get_the_nutrition_facts_array();
 
   // Convert and round all the numbers
   $found = 0;
@@ -136,7 +117,7 @@ function get_the_nutrition_facts($postId){
     } 
   }
   
-  // Get source
+  // Get source URL
   if( isset($meta['livestrong-url']) && !empty($meta['livestrong-url'][0]) ){
    $facts['source'] = $meta['livestrong-url'][0];
   }
@@ -179,4 +160,24 @@ function get_page_description(){
   return $excerpt;
 }
 
+/**
+* Process a template and return the output
+*/
+function get_include_contents($filename, $vars = array()) {
+    if (is_file($filename)) {
+        ob_start();
+        
+        // Set variables
+        extract($vars);
+        
+        // Include script and get content
+        include $filename;
+        $contents = ob_get_contents();
+        ob_end_clean();
+        return $contents;
+    }
+    return "";
+}
+
 ?>
+
