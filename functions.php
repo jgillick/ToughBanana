@@ -2,8 +2,6 @@
 require("functions/wordpress.php");
 require("functions/shortcodes.php");
 
-
-
 /**
 * THEME FUNCTIONS
 */
@@ -180,4 +178,3 @@ function get_include_contents($filename, $vars = array()) {
 }
 
 ?>
-
