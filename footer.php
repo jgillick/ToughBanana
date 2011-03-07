@@ -11,7 +11,7 @@
 <div id="footer">
 	<div class="links">
 		<ul>
-			<li><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></li>
+			<li><a href="<?php bloginfo('rss2_url') ?>" class="rss-feed">RSS Feed</a></li>
 			<?php wp_register(); ?>
 			<li><?php wp_loginout(); ?></li>
 		</ul>

@@ -18,6 +18,8 @@ h3 { font-size: 16px; font-weight: normal; margin: 15px 0 3px; }
 
 hr { margin: 20px auto; height: 30px; border: none; background: url(images/banana_hr.png) no-repeat center; }
 
+a.rss-feed { line-height: 16px; padding-left: 20px; background: url(images/rss.png) left center no-repeat; }
+
 /* Clouds */
 #clouds { position: absolute; top: 0; left: 0; width: 100%; _display: none; }
 #clouds, #clouds div { height: 200px; }

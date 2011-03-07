@@ -18,5 +18,12 @@
 			<?php wp_get_archives( 'type=monthly' ); ?>
 		</ul>
 	</div>
+	
+	<div id="subscribe" class="widget-container">
+	  <h3 class="widget-title">Subscribe</h3>
+	  <ul>
+	    <li><a href="<?php bloginfo('rss2_url') ?>" class="rss-feed">RSS Feed</a></li>
+	  </ul>
+	</div>
 
 </div>
